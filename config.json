@@ -1,0 +1,8 @@
+{
+  "HOSTNAME": "uranus",
+  "PIHOLE_API": "http://192.168.1.3/admin/api.php",
+  "INFLUXDB_SERVER": "192.168.1.4",
+  "INFLUXDB_PORT": 8086,
+  "INFLUXDB_DATABASE": "pihole",
+  "DELAY": 10
+}
