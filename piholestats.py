@@ -4,14 +4,20 @@ import requests
 import json
 import time
 from influxdb import InfluxDBClient
+import logging
+
+LOG_FILENAME = 'pihole_stats.log'
+LOG_LEVEL=logging.INFO
+
+print("Start script with log leveL: %s" % LOG_LEVEL)
 
 try:
-  with open('config.json', 'r') as f:
-    config = json.load(f)
-  with open('SECRETS.json','r') as s:
-    secrets = json.load(s)
-
-
+	with open('config.json', 'r') as f:
+		config = json.load(f)
+	with open('SECRETS.json','r') as s:
+		secrets = json.load(s)
+except IOError as e:
+	logging.error(e)
 
 HOSTNAME = config["HOSTNAME"] # Pi-hole hostname to report in InfluxDB for each measurement
 PIHOLE_API = config["PIHOLE_API"]
