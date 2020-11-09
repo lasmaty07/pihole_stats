@@ -9,7 +9,9 @@ import logging
 LOG_FILENAME = 'pihole_stats.log'
 LOG_LEVEL=logging.INFO
 
-print("Start script with log leveL: %s" % LOG_LEVEL)
+logging.basicConfig(filename=LOG_FILENAME,level=LOG_LEVEL)
+
+# print("Start script with log leveL: %s" % LOG_LEVEL)
 
 try:
 	with open('config.json', 'r') as f:
